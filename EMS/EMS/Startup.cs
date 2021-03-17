@@ -11,6 +11,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Utils;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace EMS
 {
@@ -26,6 +31,34 @@ namespace EMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
+                    {
+                        options.RequireHttpsMetadata = false;
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            // indicates whether the publisher will be validated when validating the token
+                            ValidateIssuer = true,
+                            // a string representing the publisher
+                            ValidIssuer = AuthOptions.ISSUER,
+
+                            // whether the consumer of the token will be validated
+                            ValidateAudience = true,
+                            // token consumer setting
+                            ValidAudience = AuthOptions.AUDIENCE,
+                            // whether the lifetime will be validated
+                            ValidateLifetime = true,
+
+                            // security key installation
+                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                            // security key validation
+                            ValidateIssuerSigningKey = true,
+                        };
+                    });
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -46,13 +79,16 @@ namespace EMS
 
             app.UseHttpsRedirection();
 
+            app.UseDefaultFiles();
+
             app.UseRouting();
 
+            app.UseAuthorization();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
