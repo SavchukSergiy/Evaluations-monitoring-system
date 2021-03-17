@@ -1,0 +1,12 @@
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\bin\Debug\net5.0\Utils.deps.json
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\bin\Debug\net5.0\Utils.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\bin\Debug\net5.0\ref\Utils.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\bin\Debug\net5.0\Utils.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.csprojAssemblyReference.cache
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.AssemblyInfoInputs.cache
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.AssemblyInfo.cs
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\ref\Utils.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.pdb
