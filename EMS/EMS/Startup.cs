@@ -14,7 +14,8 @@ using System.Threading.Tasks;
 using Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-//using DataAccess;
+using DataAccess;
+using Business.Account;
 //using Microsoft.EntityFrameworkCore;
 
 namespace EMS
@@ -33,6 +34,8 @@ namespace EMS
         {
             //string connection = Configuration.GetConnectionString("DefaultConnection");
             //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+            services.AddSingleton<ApplicationContext>();
+            services.AddSingleton<IAccountManager, AccountManager>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>

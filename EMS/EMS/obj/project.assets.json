@@ -1447,6 +1447,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5495,6 +5505,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -5518,7 +5533,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Business >= 1.0.0",
       "DataAccess >= 1.0.0",
+      "DataModels >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3",
       "Utils >= 1.0.0",
       "ViewModels >= 1.0.0"
@@ -5551,8 +5568,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Business\\Business.csproj": {
+              "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Business\\Business.csproj"
+            },
             "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataAccess\\DataAccess.csproj": {
               "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataAccess\\DataAccess.csproj"
+            },
+            "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataModels\\DataModels.csproj": {
+              "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataModels\\DataModels.csproj"
             },
             "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj": {
               "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj"

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Utils;
 using ViewModels;
+using Business.Account;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EMS.Controllers
 {
@@ -13,10 +15,19 @@ namespace EMS.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        private readonly IAccountManager _accountManager;
+
+        public AccountController(IAccountManager accountManager)
+        {
+            _accountManager = accountManager;
+        }
+
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
+
             return Ok();   
         }
 
