@@ -1450,6 +1450,12 @@
       "Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "DataModels": "1.0.0",
+          "Utils": "1.0.0",
+          "ViewModels": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Business.dll": {}
         },

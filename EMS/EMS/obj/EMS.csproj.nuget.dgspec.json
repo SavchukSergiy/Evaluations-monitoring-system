@@ -27,7 +27,20 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataAccess\\DataAccess.csproj"
+              },
+              "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataModels\\DataModels.csproj": {
+                "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\DataModels\\DataModels.csproj"
+              },
+              "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj"
+              },
+              "D:\\Projects\\Evaluations-monitoring-system\\EMS\\ViewModels\\ViewModels.csproj": {
+                "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\ViewModels\\ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -27,7 +27,11 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
-
+            if (model != null)
+            {
+                _accountManager.SignIn(model);
+            }
+            
             return Ok();   
         }
 
@@ -35,6 +39,10 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registration(RegisterModel model)
         {
+            if (model != null)
+            {
+                _accountManager.SignUp(model);
+            }
             return Ok();
         }
 
