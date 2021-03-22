@@ -9,3 +9,4 @@ D:\Projects\Evaluations-monitoring-system\EMS\DataModels\obj\Debug\net5.0\DataMo
 D:\Projects\Evaluations-monitoring-system\EMS\DataModels\obj\Debug\net5.0\DataModels.dll
 D:\Projects\Evaluations-monitoring-system\EMS\DataModels\obj\Debug\net5.0\ref\DataModels.dll
 D:\Projects\Evaluations-monitoring-system\EMS\DataModels\obj\Debug\net5.0\DataModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\DataModels\obj\Debug\net5.0\DataModels.csprojAssemblyReference.cache

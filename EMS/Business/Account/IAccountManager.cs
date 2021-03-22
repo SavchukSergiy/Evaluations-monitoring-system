@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViewModels;
+using DataModels;
 
 namespace Business.Account
 {
@@ -22,5 +23,9 @@ namespace Business.Account
         /// SignUp
         /// <returns></returns>
         void SignUp(RegisterModel model);
+
+        User GetUserById(Guid id);
+
+        List<User> GetAllUsers();
     }
 }

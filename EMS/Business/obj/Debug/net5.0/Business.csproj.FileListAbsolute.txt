@@ -9,3 +9,13 @@ D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\Business
 D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\Business.dll
 D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\ref\Business.dll
 D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\Business.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\DataAccess.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\DataModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\Utils.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\ViewModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\DataAccess.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\DataModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\Utils.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Business\bin\Debug\net5.0\ViewModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\Business.csprojAssemblyReference.cache
+D:\Projects\Evaluations-monitoring-system\EMS\Business\obj\Debug\net5.0\Business.csproj.CopyComplete

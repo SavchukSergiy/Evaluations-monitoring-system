@@ -34,7 +34,7 @@ namespace EMS
         {
             //string connection = Configuration.GetConnectionString("DefaultConnection");
             //services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
-            services.AddSingleton<DbContext, ApplicationContext>();
+            services.AddSingleton<ApplicationContext>();
             services.AddSingleton<IAccountManager, AccountManager>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

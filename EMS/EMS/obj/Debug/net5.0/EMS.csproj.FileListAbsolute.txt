@@ -65,3 +65,5 @@ D:\Projects\Evaluations-monitoring-system\EMS\EMS\obj\Debug\net5.0\EMS.pdb
 D:\Projects\Evaluations-monitoring-system\EMS\EMS\obj\Debug\net5.0\EMS.genruntimeconfig.cache
 D:\Projects\Evaluations-monitoring-system\EMS\EMS\bin\Debug\net5.0\ViewModels.dll
 D:\Projects\Evaluations-monitoring-system\EMS\EMS\bin\Debug\net5.0\ViewModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\EMS\bin\Debug\net5.0\Business.dll
+D:\Projects\Evaluations-monitoring-system\EMS\EMS\bin\Debug\net5.0\Business.pdb

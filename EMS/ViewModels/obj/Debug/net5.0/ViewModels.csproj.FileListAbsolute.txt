@@ -9,3 +9,4 @@ D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewMo
 D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.dll
 D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ref\ViewModels.dll
 D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.csprojAssemblyReference.cache

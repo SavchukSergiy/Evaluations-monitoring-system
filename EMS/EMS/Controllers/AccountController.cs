@@ -8,6 +8,9 @@ using Utils;
 using ViewModels;
 using Business.Account;
 using Microsoft.AspNetCore.Authorization;
+using Utils;
+using System.Security.Claims;
+using DataModels;
 
 namespace EMS.Controllers
 {
@@ -22,14 +25,24 @@ namespace EMS.Controllers
             _accountManager = accountManager;
         }
 
-        [HttpPost]
+        [HttpPost("Login")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel model)
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            if (model != null)
+            //if (model != null)
+            //{
+            //    _accountManager.SignIn(model);
+            //}
+
+            try
             {
-                _accountManager.SignIn(model);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
             
             return Ok();   
@@ -51,6 +64,23 @@ namespace EMS.Controllers
         {
             return RedirectToAction("Login", "Account");
         }
+
+
+        //private async Task<ClaimsIdentity> GetIdentity(User model)
+        //{
+        //    if (model == null || model.Id == Guid.Empty)
+        //        return null;
+
+        //    var user = await _accountManager.GetUserById(model.Id);
+            
+        //    if (user == null || user.Password != model.Password)
+        //        return null;
+
+
+
+
+        //    return null;
+        //}
 
     }
 }
