@@ -1,0 +1,11 @@
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\bin\Debug\net5.0\ViewModels.deps.json
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\bin\Debug\net5.0\ViewModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\bin\Debug\net5.0\ref\ViewModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\bin\Debug\net5.0\ViewModels.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.AssemblyInfoInputs.cache
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.AssemblyInfo.cs
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.csproj.CoreCompileInputs.cache
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ref\ViewModels.dll
+D:\Projects\Evaluations-monitoring-system\EMS\ViewModels\obj\Debug\net5.0\ViewModels.pdb

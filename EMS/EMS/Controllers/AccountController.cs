@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Utils;
+using ViewModels;
 
 namespace EMS.Controllers
 {
@@ -12,6 +13,25 @@ namespace EMS.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-      
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            return Ok();   
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            return Ok();
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
     }
 }
