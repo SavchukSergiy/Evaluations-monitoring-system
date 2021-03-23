@@ -20,11 +20,11 @@ namespace EMS.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly IAccountManager _accountManager;
+        private readonly IUserManager _userManager;
 
-        public AccountController(IAccountManager accountManager)
+        public AccountController(IUserManager userManager)
         {
-            _accountManager = accountManager;
+            _userManager = userManager;
         }
 
         [HttpPost("Login")]
@@ -85,7 +85,7 @@ namespace EMS.Controllers
 
         private async Task<ClaimsIdentity> GetIdentity(string username, string password)
         {
-            List<UserModel> users = _accountManager.GetAllUsers();
+            List<UserModel> users = _userManager.GetAllUsers();
             UserModel user = users.FirstOrDefault(u => u.Login == username && u.Password == password);
             if (user != null)
             {

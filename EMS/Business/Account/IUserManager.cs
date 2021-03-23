@@ -10,7 +10,7 @@ namespace Business.Account
     /// <summary>
     ///  IAccountManager
     /// </summary>
-    public interface IAccountManager
+    public interface IUserManager
     {
         UserModel GetUserById(Guid id);
 

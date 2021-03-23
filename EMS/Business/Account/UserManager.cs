@@ -9,11 +9,11 @@ using DataModels;
 
 namespace Business.Account
 {
-    public class AccountManager : IAccountManager
+    public class UserManager : IUserManager
     {
         private readonly ApplicationContext _applicationContext;
 
-        public AccountManager(ApplicationContext appContext)
+        public UserManager(ApplicationContext appContext)
         {
             _applicationContext = appContext;
         }
