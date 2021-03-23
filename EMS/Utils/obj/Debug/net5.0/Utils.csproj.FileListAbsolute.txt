@@ -9,3 +9,4 @@ D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.cspro
 D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.dll
 D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\ref\Utils.dll
 D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.pdb
+D:\Projects\Evaluations-monitoring-system\EMS\Utils\obj\Debug\net5.0\Utils.csprojAssemblyReference.cache
