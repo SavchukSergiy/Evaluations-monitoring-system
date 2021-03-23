@@ -10,8 +10,7 @@
         "dependencies": {
           "DataAccess": "1.0.0",
           "DataModels": "1.0.0",
-          "Utils": "1.0.0",
-          "ViewModels": "1.0.0"
+          "Utils": "1.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -874,11 +873,6 @@
         "runtime": {
           "Utils.dll": {}
         }
-      },
-      "ViewModels/1.0.0": {
-        "runtime": {
-          "ViewModels.dll": {}
-        }
       }
     }
   },
@@ -1529,11 +1523,6 @@
       "sha512": ""
     },
     "Utils/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

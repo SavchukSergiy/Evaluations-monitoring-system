@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using DataModels;
-using ViewModels;
 
 namespace Business.Account
 {
@@ -18,17 +17,17 @@ namespace Business.Account
             _applicationContext = appContext;
         }
 
-        public List<User> GetAllUsers()
+        public List<UserModel> GetAllUsers()
         {
             return null;
         }
 
-        public User GetUserById(Guid id)
+        public UserModel GetUserById(Guid id)
         {
             return null;
         }
 
-        public void SignIn(LoginModel model)
+        public void SignIn(UserModel model)
         {
             throw new NotImplementedException();
         }

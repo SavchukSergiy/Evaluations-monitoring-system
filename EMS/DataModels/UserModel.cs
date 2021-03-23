@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataModels
 {
-    public class User
+    public class UserModel
     {
         public Guid Id { get; set; }
         public string Login { get; set; }

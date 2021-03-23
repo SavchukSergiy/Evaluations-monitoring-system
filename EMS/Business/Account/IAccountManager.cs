@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViewModels;
 using DataModels;
 
 namespace Business.Account
@@ -17,15 +16,15 @@ namespace Business.Account
         /// SignIn
         /// </summary>
         /// <returns></returns>
-        void SignIn(LoginModel model);
+        void SignIn(UserModel model);
 
         /// <summary>
         /// SignUp
         /// <returns></returns>
         void SignUp(RegisterModel model);
 
-        User GetUserById(Guid id);
+        UserModel GetUserById(Guid id);
 
-        List<User> GetAllUsers();
+        List<UserModel> GetAllUsers();
     }
 }

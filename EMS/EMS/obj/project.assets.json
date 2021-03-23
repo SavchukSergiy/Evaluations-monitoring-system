@@ -1453,8 +1453,7 @@
         "dependencies": {
           "DataAccess": "1.0.0",
           "DataModels": "1.0.0",
-          "Utils": "1.0.0",
-          "ViewModels": "1.0.0"
+          "Utils": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Business.dll": {}
@@ -1498,16 +1497,6 @@
         },
         "runtime": {
           "bin/placeholder/Utils.dll": {}
-        }
-      },
-      "ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ViewModels.dll": {}
         }
       }
     }
@@ -5530,11 +5519,6 @@
       "type": "project",
       "path": "../Utils/Utils.csproj",
       "msbuildProject": "../Utils/Utils.csproj"
-    },
-    "ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../ViewModels/ViewModels.csproj",
-      "msbuildProject": "../ViewModels/ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5543,8 +5527,7 @@
       "DataAccess >= 1.0.0",
       "DataModels >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3",
-      "Utils >= 1.0.0",
-      "ViewModels >= 1.0.0"
+      "Utils >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5585,9 +5568,6 @@
             },
             "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj": {
               "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\Utils\\Utils.csproj"
-            },
-            "D:\\Projects\\Evaluations-monitoring-system\\EMS\\ViewModels\\ViewModels.csproj": {
-              "projectPath": "D:\\Projects\\Evaluations-monitoring-system\\EMS\\ViewModels\\ViewModels.csproj"
             }
           }
         }

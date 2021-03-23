@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Utils;
-using ViewModels;
 using Business.Account;
 using Microsoft.AspNetCore.Authorization;
 using Utils;
@@ -28,7 +27,7 @@ namespace EMS.Controllers
         [HttpPost("Login")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
+        public async Task<IActionResult> Login([FromBody] UserModel model)
         {
             //if (model != null)
             //{
