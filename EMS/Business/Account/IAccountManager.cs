@@ -12,17 +12,6 @@ namespace Business.Account
     /// </summary>
     public interface IAccountManager
     {
-        /// <summary>
-        /// SignIn
-        /// </summary>
-        /// <returns></returns>
-        void SignIn(UserModel model);
-
-        /// <summary>
-        /// SignUp
-        /// <returns></returns>
-        void SignUp(RegisterModel model);
-
         UserModel GetUserById(Guid id);
 
         List<UserModel> GetAllUsers();

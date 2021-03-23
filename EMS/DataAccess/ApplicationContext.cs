@@ -10,7 +10,7 @@ namespace DataAccess
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<UserModel> users { get; set; }
+        public DbSet<UserModel> Users { get; set; }
 
         public ApplicationContext()
         {

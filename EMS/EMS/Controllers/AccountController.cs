@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 using Utils;
 using System.Security.Claims;
 using DataModels;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EMS.Controllers
 {
@@ -27,34 +30,49 @@ namespace EMS.Controllers
         [HttpPost("Login")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([FromBody] UserModel model)
+        public async Task<IActionResult> Login(string username, string password)
         {
-            //if (model != null)
-            //{
-            //    _accountManager.SignIn(model);
-            //}
-
             try
             {
+                var identity = await GetIdentity(username, password);
+                
+                if (identity == null)
+                    return BadRequest();
 
+                var now = DateTime.UtcNow;
+
+                // создаем JWT-токен
+                var jwt = new JwtSecurityToken(
+                        issuer: AuthOptions.ISSUER,
+                        audience: AuthOptions.AUDIENCE,
+                        notBefore: now,
+                        claims: identity.Claims,
+                        expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
+                        signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+                var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                var response = new
+                {
+                    access_token = encodedJwt,
+                    username = identity.Name
+                };
+
+                return Ok(response);
             }
             catch (Exception)
             {
 
-                throw;
+                return StatusCode(500);
             }
             
-            return Ok();   
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Registration(RegisterModel model)
+        public async Task<IActionResult> Registration(UserModel model)
         {
-            if (model != null)
-            {
-                _accountManager.SignUp(model);
-            }
+           
             return Ok();
         }
 
@@ -65,21 +83,26 @@ namespace EMS.Controllers
         }
 
 
-        //private async Task<ClaimsIdentity> GetIdentity(User model)
-        //{
-        //    if (model == null || model.Id == Guid.Empty)
-        //        return null;
+        private async Task<ClaimsIdentity> GetIdentity(string username, string password)
+        {
+            List<UserModel> users = _accountManager.GetAllUsers();
+            UserModel user = users.FirstOrDefault(u => u.Login == username && u.Password == password);
+            if (user != null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                    new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
+                };
+                ClaimsIdentity claimsIdentity =
+                new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
+                    ClaimsIdentity.DefaultRoleClaimType);
+                return claimsIdentity;
+            }
 
-        //    var user = await _accountManager.GetUserById(model.Id);
-            
-        //    if (user == null || user.Password != model.Password)
-        //        return null;
-
-
-
-
-        //    return null;
-        //}
+            // if user is not found
+            return null;
+        }
 
     }
 }

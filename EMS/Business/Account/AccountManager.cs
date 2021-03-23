@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
@@ -19,22 +20,12 @@ namespace Business.Account
 
         public List<UserModel> GetAllUsers()
         {
-            return null;
+            return _applicationContext.Users.ToList();
         }
 
         public UserModel GetUserById(Guid id)
         {
-            return null;
-        }
-
-        public void SignIn(UserModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SignUp(RegisterModel model)
-        {
-            throw new NotImplementedException();
+            return _applicationContext.Users.FirstOrDefault(u => u.Id == id);
         }
     }
 }
