@@ -61,7 +61,6 @@ namespace EMS.Controllers
             }
             catch (Exception)
             {
-
                 return StatusCode(500);
             }
             
@@ -72,46 +71,49 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registration(UserModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var result = _userManager.AddNewUser(model);
+            try
+            {   
+                    List<UserModel> users = _userManager.GetAllUsers();
+                    UserModel user = users.FirstOrDefault(u => u.Login == model.Login && u.Password == model.Password);
 
-                if (result)
-                {
-
-                    var identity = await GetIdentity(model.Login, model.Password);
-
-                    if (identity == null)
-                        return BadRequest();
-
-                    var now = DateTime.UtcNow;
-
-                    // создаем JWT-токен
-                    var jwt = new JwtSecurityToken(
-                            issuer: AuthOptions.ISSUER,
-                            audience: AuthOptions.AUDIENCE,
-                            notBefore: now,
-                            claims: identity.Claims,
-                            expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
-                            signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
-                    var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
-
-                    var response = new
+                    if (user != null)
                     {
-                        access_token = encodedJwt,
-                        username = identity.Name
-                    };
+                        return BadRequest();
+                    }
+                    else
+                    {
+                        _userManager.AddNewUser(model);
 
-                    return Ok(response);
-                }
-                else
-                {
-                    return StatusCode(500);
-                }
+                        var identity = await GetIdentity(model.Login, model.Password);
+
+                        if (identity == null)
+                            return StatusCode(500);
+
+                        var now = DateTime.UtcNow;
+
+                        // создаем JWT-токен
+                        var jwt = new JwtSecurityToken(
+                                issuer: AuthOptions.ISSUER,
+                                audience: AuthOptions.AUDIENCE,
+                                notBefore: now,
+                                claims: identity.Claims,
+                                expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
+                                signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+                        var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                        var response = new
+                        {
+                            access_token = encodedJwt,
+                            username = identity.Name
+                        };
+
+                        return Ok(response);
+                    }
             }
-
-
-            return Ok();
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
         }
 
 

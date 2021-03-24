@@ -16,6 +16,6 @@ namespace Business.Account
 
         List<UserModel> GetAllUsers();
 
-        bool AddNewUser(UserModel model);
+        void AddNewUser(UserModel model);
     }
 }
