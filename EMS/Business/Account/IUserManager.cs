@@ -15,5 +15,7 @@ namespace Business.Account
         UserModel GetUserById(Guid id);
 
         List<UserModel> GetAllUsers();
+
+        bool AddNewUser(UserModel model);
     }
 }

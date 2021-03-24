@@ -72,7 +72,45 @@ namespace EMS.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registration(UserModel model)
         {
-           
+            if (ModelState.IsValid)
+            {
+                var result = _userManager.AddNewUser(model);
+
+                if (result)
+                {
+
+                    var identity = await GetIdentity(model.Login, model.Password);
+
+                    if (identity == null)
+                        return BadRequest();
+
+                    var now = DateTime.UtcNow;
+
+                    // создаем JWT-токен
+                    var jwt = new JwtSecurityToken(
+                            issuer: AuthOptions.ISSUER,
+                            audience: AuthOptions.AUDIENCE,
+                            notBefore: now,
+                            claims: identity.Claims,
+                            expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
+                            signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+                    var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                    var response = new
+                    {
+                        access_token = encodedJwt,
+                        username = identity.Name
+                    };
+
+                    return Ok(response);
+                }
+                else
+                {
+                    return StatusCode(500);
+                }
+            }
+
+
             return Ok();
         }
 

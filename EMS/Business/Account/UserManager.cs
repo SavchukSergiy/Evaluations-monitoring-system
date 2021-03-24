@@ -27,5 +27,15 @@ namespace Business.Account
         {
             return _applicationContext.Users.FirstOrDefault(u => u.Id == id);
         }
+
+        public bool AddNewUser(UserModel model) 
+        {
+            if (model != null)
+            {
+                _applicationContext.Users.Add(model);
+                return true;
+            }
+            return false;
+        }
     }
 }
