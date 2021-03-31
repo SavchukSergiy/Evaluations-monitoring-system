@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register Page</title>
+</head>
+<body>
+    <h3>Registration Page</h3>
+
+    <div id="RegisterForm">
+        <h3>Registration</h3>
+        <label>Enter email</label><br />
+        <input type="email" id="emailLogin" /> <br /><br />
+
+        <label>Enter password</label><br />
+        <input type="password" id="passwordLogin" /><br /><br />
+
+        <label>Role</label><br />
+        <input type="text" id="Role" /><br /><br />
+
+        <label>First name</label><br />
+        <input type="text" id="FirstName" /><br /><br />
+
+        <label>Second name</label><br />
+        <input type="text" id="SecondName" /><br /><br />
+
+        <label>Sur name</label><br />
+        <input type="text" id="SurName" /><br /><br />
+
+        <input type="submit" id="submitLogin" value="SignUp" />
+    </div>
+
+    <script>
+
+
+        function uuidv4() {
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
+        </script>
+</body>
+</html>
